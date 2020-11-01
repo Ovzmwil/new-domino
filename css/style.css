@@ -1,0 +1,9 @@
+body {
+    margin: 0px;
+}
+
+#game {
+    overflow: scroll;
+    height: 100vh;
+    width: 100vw;
+}
