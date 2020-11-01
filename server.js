@@ -50,7 +50,7 @@ app.use("/api", restricted, apiRoutes);
 app.use("/", restricted, staticRoutes);
 
 /* Express Initialization */
-server.listen(8081);
+server.listen(process.env.PORT || 8081);
 
 console.log("Listening on :8081");
 
