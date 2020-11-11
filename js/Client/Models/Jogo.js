@@ -141,8 +141,8 @@ Jogo.prototype.AniEntrada = function(jogador){
 
 function megaman_entrada() {
     
-    entrada = game.add.sprite(megalocal.x,0,'megaman');
-    entrada.scale.setTo(2,2);
+    entrada = game.add.sprite(megalocal.x,0,'ahri');
+    entrada.scale.setTo(0,0);
     entrada.animations.add('entada',[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22]);
 
     var tween = game.add.tween(entrada,[1]);        
@@ -162,7 +162,7 @@ function fireBullet () {
         if (bullet)
         {
             bullet.reset(megalocal.x+110, megalocal.y+90);
-            bullet.body.velocity.x = 500;            
+            bullet.body.velocity.x = 1000;            
         }
         
         if(qtdbulletsatual<qtdbullets){
@@ -170,7 +170,7 @@ function fireBullet () {
         }
         else{
             var saida = game.add.sprite(megalocal.x,megalocal.y,'megaman');
-            saida.scale.setTo(2,2);
+            saida.scale.setTo(0,0);
             saida.animations.add('saida',[23,24,25,26,27,28,29,30,31,32]);
             saida.animations.play('saida',10,false);
             entrada.kill();

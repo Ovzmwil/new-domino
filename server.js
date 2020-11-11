@@ -50,9 +50,10 @@ app.use("/api", restricted, apiRoutes);
 app.use("/", restricted, staticRoutes);
 
 /* Express Initialization */
+
 server.listen(process.env.PORT || 8081);
 
-console.log("Listening on :8081");
+console.log("Listening on :8081" );
 
 /* Socket IO Initialization */
 const io = socketio.listen(server);
