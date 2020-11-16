@@ -1,4 +1,4 @@
-# Dominois
+# Dominando
 
 Projeto de um jogo de dominó desenvolvido em NodeJS.
 

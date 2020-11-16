@@ -1,10 +1,10 @@
 body {
     margin: 0;
-    background: #76b852; /* fallback for old browsers */
-    background: -webkit-linear-gradient(right, #76b852, #8DC26F);
-    background: -moz-linear-gradient(right, #76b852, #8DC26F);
-    background: -o-linear-gradient(right, #76b852, #8DC26F);
-    background: linear-gradient(to left, #76b852, #8DC26F);
+    background: #0b3b5f; /* fallback for old browsers */
+    background: -webkit-linear-gradient(right, #0b3b5f, #0b3b5f);
+    background: -moz-linear-gradient(right, #0b3b5f, #0b3b5f);
+    background: -o-linear-gradient(right, #0b3b5f, #0b3b5f);
+    background: linear-gradient(to left, #0b3b5f, #0b3b5f);
     font-family: "Roboto", sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;     
@@ -103,7 +103,7 @@ aside[role="complementary"] li a {
     margin-top:50px;
     float:left;
     padding:6px;
-    border:1px solid #76b852;
+    border:1px solid #0b3b5f;
     background-color:#ccffcc;
     }
 
