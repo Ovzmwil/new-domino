@@ -1,5 +1,6 @@
 $(function(){
     var btnLogin = $("#btnLogin");
+    var btnConta = $("#btnConta");
     var txtUsername = $("#txtUsername");
     var txtPassword = $("#txtPassword");
 
@@ -14,6 +15,10 @@ $(function(){
             });
         }
     }
+
+    btnConta.click(function(){
+        window.location.href = "/cadastro";
+    });
 
     btnLogin.click(function(){
         var data = {

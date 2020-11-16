@@ -32,7 +32,7 @@
     function startGame() {   
         try{     
             myMusic = new sound("./assets/gametheme.mp3");     
-            myMusic.play();
+            ligarSom();
         }
         catch {
             desligarSom();
@@ -74,7 +74,7 @@
                 <!--<span><img src="./assets/icons/person.png" class="person"></span>-->
                 <span class="welcome-msg">Bem vindo,&nbsp;</span><span class="username-msg"></span>
                 <br>
-                <a class="logout">Sair</a>
+                <a class="logout" href="/cadastro">Meus Cadastro</a> &nbsp; &nbsp; &nbsp; <a class="logout">Sair</a>
                 </div>
             </div>
         </header>      
