@@ -1,21 +1,35 @@
 body {
     margin: 0;
-    background: #0b3b5f; /* fallback for old browsers */
-    background: -webkit-linear-gradient(right, #0b3b5f, #0b3b5f);
-    background: -moz-linear-gradient(right, #0b3b5f, #0b3b5f);
-    background: -o-linear-gradient(right, #0b3b5f, #0b3b5f);
-    background: linear-gradient(to left, #0b3b5f, #0b3b5f);
+    background-image: url("fundo.png");
+    height: 600px;
+    /*background: #F9f295; */ /* fallback for old browsers */
+    /*
+    background: -webkit-linear-gradient(right, #F9f295, #F9f295);
+    background: -moz-linear-gradient(right, #F9f295, #F9f295);
+    background: -o-linear-gradient(right, #F9f295, #F9f295);
+    background: linear-gradient(to left, #F9f295, #F9f295);
+    */
     font-family: "Roboto", sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;     
 }
+
+body.img {
+    opacity: 0.5;
+  }
+
 .container, .container-fluid {
     padding-right: 15px;
     padding-left: 15px;
-    background-color: #f9f9f9;
+    /*background-color: transparent !important;*/
+    
+    
 }
 .row {
     margin-bottom: 20px;
+    /*background: transparent !important;*/
+    background-color: white;
+    
 }
 header{
     padding-top: 15px;
@@ -39,6 +53,7 @@ footer{
     background-color: #d9d9d9;
     border: 1px solid #ddd;
     border: 1px solid #d9d9d9;
+    *background: transparent !important;
 }
 div[role="main"] > div{
     background-color: #fff;
@@ -48,7 +63,9 @@ div[role="main"] > div{
     text-align: center;
 }
 div[role="main"], aside {
-    min-height: 600px;
+    min-height: 400px;
+    max-height: 400px;    
+    
 }
 aside{
     background-color: #d9d9d9;
@@ -73,7 +90,13 @@ aside[role="complementary"] li a {
     list-style: none;
     margin: 0;
     padding: 0;
+    
 }
+
+a{
+    color:#ff0000 !important;    
+}
+
 .menu a{
     display: block;
     padding-top:10px;
@@ -90,20 +113,20 @@ aside[role="complementary"] li a {
     float:right;
 }
 #main-logo{
-    width: 550px;
+    width: 300px;
 }
 .logo {
-    padding:45px;
+    padding:15px;
     margin-bottom:-70px;
-    margin-left:260px;
+    margin-left:150px;
 }
 
 .room {
     margin-left:50px;
-    margin-top:50px;
+    margin-top:10px;
     float:left;
     padding:6px;
-    border:1px solid #0b3b5f;
+    border:1px solid #F9f295;
     background-color:#ccffcc;
     }
 
@@ -144,3 +167,14 @@ aside[role="complementary"] li a {
 .top {
     margin-top:60px;
 }
+
+.conteudo{    
+    overflow-x: hidden;
+    max-height: 380px;
+    min-height: 380px;
+}
+
+
+a.one:link {color:#ff0000;}
+a.one:visited {color:#0000ff;}
+a.one:hover {color:#ffcc00;}

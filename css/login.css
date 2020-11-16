@@ -41,7 +41,7 @@
   cursor: pointer;
 }
 .form input[type="button"]:hover,.form input[type="button"]:active,.form input[type="button"]:focus {
-  background: #011101;
+  background: #014d01;
 }
 .form .message {
   margin: 15px 0 0;
@@ -89,7 +89,9 @@
   color: #EF3B3A;
 }
 body {
-  background: #b3b602; /* fallback for old browsers */
+  /*background: #F9f295; */
+  background-image: url("fundo.png");
+  height: 600px;
   font-family: "Roboto", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;      
