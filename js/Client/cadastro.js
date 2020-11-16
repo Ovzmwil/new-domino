@@ -19,7 +19,7 @@ $(function(){
     }
 
     btnConta.click(function(){
-        window.location.href = "/cadastro";
+        window.location.href = "/index";
     });
 
     btnCancelar.click(function(){
