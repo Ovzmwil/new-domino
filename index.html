@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Menu Principal - Dominois</title>
+    <title>Menu Principal - Dominando</title>
 
     <link href="css/material-icons.css" rel="stylesheet">
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -22,38 +22,78 @@
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 </head>
-<body>
+<script>
+
+    var myGamePiece;
+    var myObstacles = [];
+    var mySound;
+    var myMusic;
+
+    function startGame() {   
+        try{     
+            myMusic = new sound("./assets/gametheme.mp3");     
+            ligarSom();
+        }
+        catch {
+            desligarSom();
+        }
+    } 
+    
+    function sound(src) {
+        this.sound = document.createElement("audio");
+        this.sound.loop = true;
+        this.sound.src = src;
+        this.sound.setAttribute("preload", "auto");
+        this.sound.setAttribute("controls", "none");
+        this.sound.style.display = "none";
+        document.body.appendChild(this.sound);
+        
+        this.play = function(){
+            document.getElementById("soundsOn").style.display = "inline";
+            document.getElementById("soundsOff").style.display = "none";
+            this.sound.play();            
+        }
+
+        this.stop = function(){            
+            document.getElementById("soundsOn").style.display = "none";
+            document.getElementById("soundsOff").style.display = "inline";
+            this.sound.pause();
+        }    
+    }    
+
+</script>
+
+<body onload="startGame()">
     <div class="container">
         <header class="row">
             <div class="col-md-6 col-md-offset-3  col-sm-12 col-xs-12">
-                <img src="./assets/logo.jpg" alt="logo" id="main-logo">
+                <img src="./assets/TituloJogo.png" alt="logo" id="main-logo">
             </div>
             <div class="col-md-3 col-xs-12 pull-right username-box">
-                <div class="row top">
-                <span><img src="./assets/icons/person.png" class="person"></span>
+                <div class="row">
+                <!--<span><img src="./assets/icons/person.png" class="person"></span>-->
                 <span class="welcome-msg">Bem vindo,&nbsp;</span><span class="username-msg"></span>
                 <br>
-                <a class="logout">Sair</a>
+                <a class="logout" href="/cadastro">Meus Cadastro</a> &nbsp; &nbsp; &nbsp; <a class="logout">Sair</a>
                 </div>
             </div>
-        </header>
-        <div class="row">
-            <div class="col-md-3 hidden-xs hidden-sm">
-                <aside role="complementary">
-                    <ul class="menu">
-                        <li><a href="#aba01"><img src="./assets/icons/novasala.png"><h4>Salas de Jogo</h4></a></li>
-                        <li><a href="#aba02"><img src="./assets/icons/ranking.png"><h4>Ranking</h4></a></li>
-                        <li><a href="#aba03"><img src="./assets/icons/regras.png"><h4>Regras</h4></a></li>
-                        <li><a href="#aba04"><img src="./assets/icons/config.png"><h4>Alterar Skin</h4></a></li>
-                    </ul>
-                </aside>
-            </div>
-            <div role="main" class="col-md-8 col-xs-12 col-sm-12">
+        </header>      
+
+
+        <div class="row" style="box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24); border-radius: 10px;">            
+            <div role="main" class="col-md-12 col-xs-12 col-sm-12">
                 <div>
                     <div class="conteudo" id="aba01">
                         <h1> SALAS DE JOGO </h1>
+                        </br>
                         <div class="row">
-                            <div class="col-md-11" id="salas">
+                            <div class="col-md-11  text-center" id="salas">
+                                <button type="button" class="btn btn-success" data-toggle="modal" data-target="#createGameModal">Criar Sala</button>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-12" id="salas">
                                 <div class="alert alert-danger hidden">
                                     <h4>Não foi possível carregar as salas disponíveis.</h4><br>
                                     <button id="btnReload" class="btn btn-primary">Recarregar</button>
@@ -66,17 +106,13 @@
                                 <br>
                             </div>
                         </div>
-                            <div class="row">
-                            <div class="col-md-11" id="salas">
-                                <button type="button" class="btn btn-success" data-toggle="modal" data-target="#createGameModal">Criar Jogo</button>
-                            </div>
-                        </div>
+                        
 
                         <div class="modal fade" id="createGameModal" data-backdrop="static" data-keyboard="false" role="dialog">
                             <div class="modal-dialog">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h4>Criar Jogo</h4>
+                                        <h4>Criar Sala</h4>
                                     </div>
                                     <div class="modal-body">
                                         <form role="form">
@@ -124,7 +160,7 @@
                         <h1> Ranking de Jogadores </h1>
                         <div class="row">
                             <div class="col-md-11" id="salas">
-                                <table id="tabelaa" border=1 align="center" bordercolor="#C0C0C0">
+                                <table id="tabelaa1" border=1 align="center" class="table table-dark">
                                     <tr>
                                         <th width=50>Colocação</th>
                                         <th width=400 class="cabecalho">Nome</th>
@@ -155,6 +191,7 @@
                                         <td>100</td>
                                         <td>1</td>
                                     </tr>
+                                    
                                 </table>
                             </div>
                         </div>
@@ -171,39 +208,112 @@
                         <p>Ganhará o jogador que colocar todas as pedras primeiro na mesa.</p>
                         <h3>Fecha</h3>
                         <p>Se nenhum jogador conseguir colocar mais pedras no jogo, ganhará o jogador ou jogadores com menos pedras.</p>
-                        <h3>Pontuação</h3>
-                        <p>O jogador vencedor ganhará 10 pontos.</p>
+                        
                     </div>
                     <div class="conteudo" id="aba04">
-                        <h1> Alterar Skin </h1>
+                        <h1> Peças Disponíveis </h1>
                         <div class="row margin-top-50">
+                            <div class="col-md-3"></div>
                             <div class="col-md-6">
                               <img src="../assets/skin/default/pedras/11.png" class="imgskin">
                               <button type="button" class="form-control btn btn-success margin-bottom-5" data-dimiss="modal" onclick="EscolherSkin('default/')" value="Normal" >Normal</button>
-                            </div>
-                            <div class="col-md-6 ">
-                                 <img src="../assets/skin/airplane_skin/pedras/11.png"class="imgskin">
-                                 <button type="button" class="form-control btn btn-success margin-bottom-5" data-dimiss="modal" onclick="EscolherSkin('airplane_skin/')" value="Avião">Avião</button>
-                             </div>
+                            </div>                           
                         </div>
+
+                        
                          <div class="row margin-top-50">
+                            <div class="col-md-3"></div>
                              <div class="col-md-6">
                                      <img src="../assets/skin/flash_skin/pedras/11.png" class="imgskin">
                                      <button type="button" class="form-control btn btn-success margin-bottom-5" data-dimiss="modal" onclick="EscolherSkin('flash_skin/')" value="Flash">Flash</button>
                             </div>
-                              <div class="col-md-6">
-                                 <img src="../assets/skin/Domino_Color/pedras/11.png" class="imgskin">
-                                 <button type="button" class="form-control btn btn-success margin-bottom-5 margin-left-5" data-dimiss="modal" onclick="EscolherSkin('Domino_Color/')" value="Colorido">Colorido</button>                        
-                             </div>
+                             
                          </div>
 
+                         <div class="row margin-top-50">
+                            <div class="col-md-3"></div>
+                             <div class="col-md-6">
+                                <img src="../assets/skin/Domino_Color/pedras/11.png" class="imgskin">
+                                <button type="button" class="form-control btn btn-success margin-bottom-5 margin-left-5" data-dimiss="modal" onclick="EscolherSkin('Domino_Color/')" value="Colorido">Colorido</button>                        
+                            </div>
+                        </div>
+
                     </div>
+
+                    <div class="conteudo" id="aba05" style="overflow-y: hidden;">
+                        <h1> Som </h1>
+                        <div class="row">
+                            <div class="col-md-12" id="soundsOn">
+                                <h3> Ligado </h3>
+                                <input type="image" id="btnsoundsOn" onclick="desligarSom()" alt=""
+                                    src="./assets/volume.png">
+
+                            </div>
+
+                            <div class="col-md-12" id="soundsOff"  style="display:none;" >
+                                <h3> Desligado </h3>
+                                <input type="image" style="opacity: 0.1;" id="btnsoundsOff" onclick="ligarSom()" alt=""
+                                    src="./assets/volume.png">
+
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>            
         </div>
 
-        <footer class="row">
-            <h4> Created by DominoisTeam. All rights reserved. </h4>
+        <div class="row" style="box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24); border-radius: 10px;">
+            <div class="col-sm-1 text-center">
+            </div>
+            <div class="col-sm-2 text-center">
+                <ul class="menu">                    
+                    <li><a href="#aba05"><img src="./assets/icons/config.png"><h4>Configurações</h4></a></li>
+                </ul>
+             </div>
+
+             <div class="col-sm-2 text-center">
+                <ul class="menu">                    
+                    <li><a href="#aba04"><img src="./assets/icons/design.png"><h4>Peças</h4></a></li>
+                </ul>
+             </div>
+
+             <div class="col-sm-2 text-center">
+                <ul class="menu">                    
+                    <li><a href="#aba03"><img src="./assets/icons/regras.png"><h4>Regras do Jogo</h4></a></li>
+                    
+                </ul>
+             </div>
+
+            <div class="col-sm-2 text-center">
+                <ul class="menu">
+                    <li><a href="#aba01"><img src="./assets/icons/novasala.png"><h4>Salas</h4></a></li>
+                    
+                </ul>
+             </div>
+             <div class="col-sm-2 text-center">
+                <ul class="menu">
+
+                    <li><a href="#aba02"><img src="./assets/icons/ranking.png"><h4>Ranking</h4></a></li>
+            
+                </ul>
+             </div>
+             
+             
+        </div>
+
+        
+        <!--
+        <div class="row">
+            <div class="col-sm-12 text-center">
+                <button class="btn btn-primary btn-lg "><i class="fa fa-home"></i></button>
+                <button class="btn btn-danger btn-lg ">button</button>
+             </div>
+        </div>
+-->
+
+        <footer class="row" style="box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24); border-radius: 10px;">
+            <h4> Dominando 2020. All rights reserved. </h4>
         </footer>
     </div>
     <script>
@@ -214,6 +324,15 @@
             }
             $("#MensagemSkinAlterada").modal("show");
         }
+
+        var ligarSom = function () {
+            myMusic.play();
+        }
+
+        var desligarSom = function () {
+            myMusic.stop();
+        }
+        
     </script>
 
    <div class="modal fade" id="createConfigModal" data-backdrop="static" data-keyboard="false" role="dialog">
@@ -272,4 +391,7 @@
         </div> 
     </div>
 </body>
+
+
+
 </html>
