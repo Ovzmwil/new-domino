@@ -36,6 +36,7 @@ const restricted = function(req, res, next) {
         next();
     } else {
         res.redirect('/login');
+        
     }
 }
 
@@ -48,6 +49,7 @@ app.use(sessionMiddleware);
 /* Setting routes */
 app.use("/api", restricted, apiRoutes);
 app.use("/", restricted, staticRoutes);
+app.use(express.static(__dirname));
 
 /* Express Initialization */
 

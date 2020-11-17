@@ -13,9 +13,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "body-parser": "^1.17.1",
     "express": "^4.15.2",
     "express-session": "^1.15.2",
+    "mongoose": "^5.10.14",
     "phaser": "^2.6.2",
     "phaser-ce": "^2.7.5",
     "phaser-kinetic-scrolling-plugin": "^1.0.4",
