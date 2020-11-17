@@ -10,11 +10,11 @@ window.onload = function () {
 
     var preload = function() {                   
         game2.load.spritesheet('pedras', '/assets/AniSprites/spritesheetpedras.png', 68, 130);
-        game2.load.image('logo', '/assets/AniSprites/logo-dominois.png');
+        game2.load.image('logo', '/assets/TituloJogo.png');
     }
 
     function create () {                    
-        game2.stage.backgroundColor = '#76b852';
+        game2.stage.backgroundColor = 'trans';
         var sprites = game2.add.spriteBatch();
         pedras = [];
         var frame;

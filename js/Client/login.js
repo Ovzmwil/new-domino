@@ -1,5 +1,8 @@
 $(function(){
     var btnLogin = $("#btnLogin");
+    var btnConta = $("#btnConta");
+    var btnCancelar = $("#btnCancelar");
+    
     var txtUsername = $("#txtUsername");
     var txtPassword = $("#txtPassword");
 
@@ -14,6 +17,14 @@ $(function(){
             });
         }
     }
+
+    btnConta.click(function(){
+        window.location.href = "/cadastro";
+    });
+
+    btnCancelar.click(function(){
+        window.location.href = "/index";
+    });
 
     btnLogin.click(function(){
         var data = {
