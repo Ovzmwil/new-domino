@@ -4,7 +4,7 @@ class LoginService {
     static post(data, db) {
         return new Promise(async (resolve, reject) => {
             
-            const {email} = data.email;
+            // const {email} = data.email;
             
             try{
                 if(!data)

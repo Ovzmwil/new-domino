@@ -1,10 +1,12 @@
 $(function(){
     var btnLogin = $("#btnLogin");
     var btnConta = $("#btnConta");
-    var btnCancelar = $("#btnCancelar");
+    var btnCadastrar = $("#btnCadastrar");
     
-    var txtUsername = $("#txtUsername");
-    var txtPassword = $("#txtPassword");
+    var txtUsernameCad = $("#txtNomeCad");
+    var txtEmailCad = $("#txtEmailCad")
+    var txtPasswordCad = $("#txtSenhaCad");
+    var txtConfPasswordCad = $('#txtConfSenhaCad')
 
 
     if(navigator.userAgent.toLowerCase().indexOf('firefox') > -1){
@@ -26,14 +28,16 @@ $(function(){
         window.location.href = "/index";
     });
 
-    btnLogin.click(function(){
+    btnCadastrar.click(function(){
+        console.log('Botao pressionado')
         var data = {
-            "username" : txtUsername.val(),
-            "password" : txtPassword.val()
+            "name" : txtUsernameCad.val(),
+            "password" : txtPasswordCad.val(),
+            "email": txtEmailCad.val()
         };
         
         $.ajax({
-            url: '/api/login',
+            url: '/api/cadastro',
             type: 'POST',
             data: JSON.stringify(data),
             contentType: 'application/json; charset=utf-8',
@@ -46,7 +50,7 @@ $(function(){
                 window.location.href = "/";
             },
             error : function(){
-                alert("Não foi possível realizar login. Tente novamente mais tarde.");
+                alert("Não foi possível realizar cadastro. Tente novamente mais tarde.");
             }
         });
     });
