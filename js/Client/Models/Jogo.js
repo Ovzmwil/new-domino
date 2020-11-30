@@ -233,9 +233,8 @@ Jogo.prototype.FinalizarJogo = function (data) {
         game.add.button(95, 100, 'out', getout, this, 1);
     }
     else {
-
-        buttonNok = game.add.button(game.world.centerX + 100, game.world.centerY, 'buttonNotOK', CallAhri, this, 0, 1, 2);
-        buttonOk = game.add.button(game.world.centerX - 100, game.world.centerY, 'buttonOK', Call1UP, this, 0, 1, 2);
+//        buttonNok = game.add.button(game.world.centerX + 100, game.world.centerY, 'buttonNotOK', CallAhri, this, 0, 1, 2);
+//        buttonOk = game.add.button(game.world.centerX - 100, game.world.centerY, 'buttonOK', Call1UP, this, 0, 1, 2);
 
         bar = game.add.graphics();
         bar.beginFill(0x000000, 0.2);
