@@ -2,6 +2,7 @@ $(function(){
     var btnLogin = $("#btnLogin");
     var btnConta = $("#btnConta");
     var btnCadastrar = $("#btnCadastrar");
+    var btnCancelar = $("#btnCancelar");
     
     var txtUsernameCad = $("#txtNomeCad");
     var txtEmailCad = $("#txtEmailCad")
