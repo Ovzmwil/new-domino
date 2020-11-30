@@ -9,7 +9,7 @@ var EstadoPrincipal = function(jogo) {
         game.load.image('dominoback', AssetsHelper.BuscarImagemPassar('dominoback'), 68, 130);
         game.load.image('bullet', '/assets/AniSprites/bullet45.png');       
         game.load.spritesheet('explosion', '/assets/AniSprites/explosion.png', 32, 32);  
-        game.load.atlasJSONArray('win', '/assets/AniSprites/win.png', '/assets/AniSprites/win.json');        
+        //game.load.atlasJSONArray('win', '/assets/AniSprites/win.png', '/assets/AniSprites/win.json');        
         game.load.bitmapFont('desyrel', '/assets/AniSprites/desyrel.png', '/assets/AniSprites/desyrel.xml');
         game.load.atlasJSONArray('ahri', '/assets/AniSprites/ahri.png', '/assets/AniSprites/ahri.json');    
         game.load.image('ball','/assets/AniSprites/ball.png',121,77);
