@@ -32,10 +32,12 @@ Notificacao.prototype.NotificarEstado = function(jogo, turns) {
                     jogador = turns[i].name;
             }
             content = "Esperando o jogador ".concat(jogador).concat(" realizar jogada.");
+            this.notificacaoFixa = toastr.info(content, "", options);
         }else{
-            content = "Esperando outros jogadores para iniciar o jogo...";
+            content = "Esperando todos os jogadores se conectarem...";
+            this.notificacaoFixa = toastr.warning(content, "", options);
         }
 
-        this.notificacaoFixa = toastr.warning(content, "", options);
+        
     }
 };
