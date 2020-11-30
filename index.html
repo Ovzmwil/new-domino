@@ -74,7 +74,7 @@
                 <!--<span><img src="./assets/icons/person.png" class="person"></span>-->
                 <span class="welcome-msg">Bem vindo,&nbsp;</span><span class="username-msg"></span>
                 <br>
-                <a class="logout" href="/meucadastro">Meu Cadastro</a> &nbsp; &nbsp; &nbsp; <a class="logout">Sair</a>
+                <a class="logout" href="./meucadastro">Meu Cadastro</a> &nbsp; &nbsp; &nbsp; <a class="logout">Sair</a>
                 </div>
             </div>
         </header>      
@@ -197,7 +197,7 @@
                         </div>
                     </div>
                     <div class="conteudo" id="aba03">
-                        <h1>Regras do Jogo</h1>
+                        <h1>Formas de Jogar o Jogo</h1>
                         <h3>Você sabe jogar dominó ?</h3>
                         <p>O objetivo do jogo é colocar todas a suas pedras na mesa antes dos demais.Somente o primeiro que colocar todas as pedras na mesa ganhará pontos pela partida.</p>
                         <h3>Começando</h3>
@@ -219,22 +219,18 @@
                               <button type="button" class="form-control btn btn-success margin-bottom-5" data-dimiss="modal" onclick="EscolherSkin('default/')" value="Normal" >Normal</button>
                             </div>                           
                         </div>
-
-                        
-                         <div class="row margin-top-50">
+                        <div class="row margin-top-50">
                             <div class="col-md-3"></div>
                              <div class="col-md-6">
-                                     <img src="../assets/skin/flash_skin/pedras/11.png" class="imgskin">
-                                     <button type="button" class="form-control btn btn-success margin-bottom-5" data-dimiss="modal" onclick="EscolherSkin('flash_skin/')" value="Flash">Flash</button>
+                                <img src="../assets/skin/esferasdois/pedras/11.png" class="imgskin">
+                                <button type="button" class="form-control btn btn-success margin-bottom-5 margin-left-5" data-dimiss="modal" onclick="EscolherSkin('esferasdois/')" value="esferasdois">Esferas 2</button>                        
                             </div>
-                             
-                         </div>
-
-                         <div class="row margin-top-50">
+                        </div>
+                        <div class="row margin-top-50">
                             <div class="col-md-3"></div>
                              <div class="col-md-6">
-                                <img src="../assets/skin/Domino_Color/pedras/11.png" class="imgskin">
-                                <button type="button" class="form-control btn btn-success margin-bottom-5 margin-left-5" data-dimiss="modal" onclick="EscolherSkin('Domino_Color/')" value="Colorido">Colorido</button>                        
+                                <img src="../assets/skin/esferas/pedras/11.png" class="imgskin">
+                                <button type="button" class="form-control btn btn-success margin-bottom-5 margin-left-5" data-dimiss="modal" onclick="EscolherSkin('esferas/')" value="esferas">Esferas</button>                        
                             </div>
                         </div>
 
@@ -345,10 +341,10 @@
                     <form role="form">
                         <div id="name-group" class="has-feedback">
                              <div class="row margin-top-50">
-                            <div class="col-md-3 text-center">
+                            <!-- <div class="col-md-3 text-center">
                               <img src="../assets/skin/default/pedras/11.png" class="imgskin">
                               <button type="button" class="form-control btn btn-success margin-bottom-5" data-dimiss="modal" onclick="EscolherSkin('default/')" value="Normal" >Normal</button>
-                            </div>
+                            </div> -->
                             <div class="col-md-3 text-center">
                                  <img src="../assets/skin/airplane_skin/pedras/11.png" class="imgskin">
                                  <button type="button" class="form-control btn btn-success margin-bottom-5" data-dimiss="modal" onclick="EscolherSkin('airplane_skin/')" value="Avião">Avião</button>
@@ -363,6 +359,14 @@
                                  <img src="../assets/skin/Domino_Color/pedras/11.png" class="imgskin">
                                  <button type="button" class="form-control btn btn-success margin-bottom-5 margin-left-5" data-dimiss="modal" onclick="EscolherSkin('Domino_Color/')" value="Colorido">Colorido</button>                        
                              </div>
+                             <div class="col-md-3 text-center">
+                                <img src="../assets/skin/esferasdois/pedras/11.png" class="imgskin">
+                                <button type="button" class="form-control btn btn-success margin-bottom-5 margin-left-5" data-dimiss="modal" onclick="EscolherSkin('esferasdois/')" value="Esferas 2">Esferas 2</button>                        
+                            </div>
+                            <div class="col-md-3 text-center">
+                                <img src="../assets/skin/esferas/pedras/11.png" class="imgskin">
+                                <button type="button" class="form-control btn btn-success margin-bottom-5 margin-left-5" data-dimiss="modal" onclick="EscolherSkin('esferas/')" value="Esferas">Esferas</button>                        
+                            </div>
                          </div>
                         </div>
                     </form>

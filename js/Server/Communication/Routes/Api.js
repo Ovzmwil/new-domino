@@ -15,7 +15,8 @@ router.post('/login', LoginController.post);
 /* POST api/logout */
 router.post('/logout', LogoutController.post);
 
-//router.post('/cadastro', CadastroController.post);
+// router.post('/cadastro', CadastroController.post);
+
 
 /* GET api/rooms/avaliable */
 //Gambiarra para compartilhar o dado enquanto nao implementamos acesso a BD.

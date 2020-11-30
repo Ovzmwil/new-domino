@@ -14,6 +14,7 @@ router.get("/login", (req, res) => res.sendFile(baseDir.concat("/login.html")));
 router.get("/cadastro", (req, res) => res.sendFile(baseDir.concat("/cadastro.html")));
 router.get("/meucadastro", (req, res) => res.sendFile(baseDir.concat("/meucadastro.html")));
 router.get("/game/:id", (req, res) => res.sendFile(baseDir.concat("/game.html")));
+router.get("/cadastro", (req, res) => res.sendFile(baseDir.concat("/cadastro.html")));
 
 /* Disable server files access */
 router.all('/js/Server/*', (req, res) => res.status(403).send({ message: 'Forbidden'}));
