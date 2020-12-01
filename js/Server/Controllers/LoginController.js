@@ -5,6 +5,7 @@ class LoginController {
     static post(req, res) {
         LoginService.post(req.body, DB)
         .then((user) => {
+            console.log(user);
             if(user){
                 req.session.user = user;
                 res.status(200).send({ user: user });

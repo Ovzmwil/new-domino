@@ -28,7 +28,7 @@ $(function(){
 
     btnLogin.click(function(){
         var data = {
-            "username" : txtUsername.val(),
+            "name" : txtUsername.val(),
             "password" : txtPassword.val()
         };
         
@@ -41,7 +41,7 @@ $(function(){
             async: false,
             success: function(response) {
                 if(typeof(Storage) !== "undefined")
-                    localStorage.username = response.user.username;
+                    localStorage.username = response.user.name;
 
                 window.location.href = "/";
             },
