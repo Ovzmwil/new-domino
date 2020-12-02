@@ -7,7 +7,6 @@ class LoginService {
         return new Promise(async (resolve, reject) => {
             
             const {name, password} = data;
-            console.log({name, password})
             
             try{
                 if(!data)

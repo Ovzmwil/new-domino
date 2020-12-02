@@ -3,6 +3,9 @@ const DB = require('../Database/DB');
 
 class RoomController {
     static avaliable(req, res) {
+        console.log('Aqui 1')
+        console.log(req.session.user);
+        console.log(req.session.user.id);
         RoomService.avaliable(req.session.user.id, DB)
         .then((rooms) => {
             res.status(200).send({rooms : rooms});
@@ -13,6 +16,8 @@ class RoomController {
     }
 
     static post(req, res) {
+        console.log('Aqui');
+        console.log(req.session.user);
         RoomService.post(req.session.user, req.body, DB)
         .then((room) => {
             res.status(200).send(room);
