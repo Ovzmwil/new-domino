@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Checkout - Dominando</title>
+
+    <link href="css/material-icons.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/index.css" rel="stylesheet">
+    <link href="css/checkout.css" rel="stylesheet">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+    
+    <script type="text/javascript" src="js/Client/Plugins/jquery.min.js"></script>
+    <script type="text/javascript" src="js/Client/Plugins/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/Client/load_rooms.js"></script>
+    <script type="text/javascript" src="js/Client/create_room.js"></script>
+    <script type="text/javascript" src="js/Client/menu.js"></script>
+    <script type="text/javascript" src="js/Client/index.js"></script>
+
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+
+<body >
+    <div class="container">
+
+        <header class="row">
+            <div class="col-md-6 col-md-offset-3  col-sm-12 col-xs-12">
+                <img src="./assets/TituloJogo.png" alt="logo" id="main-logo">
+            </div>
+            <div class="col-md-3 col-xs-12 pull-right username-box">
+                <div class="row">
+                <!--<span><img src="./assets/icons/person.png" class="person"></span>-->
+                <span class="welcome-msg">Bem vindo,&nbsp;</span><span class="username-msg"></span>
+                <br>
+                <a class="logout" href="./checkout">Meu Carrinho</a> &nbsp; &nbsp; &nbsp; <a class="logout" href="./meucadastro">Meu Cadastro</a> &nbsp; &nbsp; &nbsp; <a class="logout">Sair</a>
+                </div>
+            </div>
+        </header>      
+
+        <div class="row" style="box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24); border-radius: 10px;">
+        <div role="main" class="col-md-12 col-xs-12 col-sm-12">
+            <br/>
+            <table id="cart" class="table table-condensed">
+            <thead>
+                <tr>
+                    <th style="width:50%">Produto</th>
+                    <th style="width:10%">Preço</th>
+                    <th style="width:8%">Quantidade</th>
+                    <th style="width:22%" class="text-center">Subtotal</th>
+                    <th style="width:10%"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td data-th="Product">
+                        <div class="row">
+                            <div class="col-sm-2 hidden-xs"><img src="../assets/skin/esferas/pedras/11.png" width="100" height="100" alt="..." class="img-responsive"/></div>
+                            <div class="col-sm-10">
+                                <h4 class="nomargin">Peça Esfera do Dragão</h4>
+                                <p>Modelo de peça com cores das esferas do dragão</p>
+                            </div>
+                        </div>
+                    </td>
+                    <td data-th="Price">R$ 2.99</td>
+                    <td data-th="Quantity">
+                        <input type="number" class="form-control text-center" value="1">
+                    </td>
+                    <td data-th="Subtotal" class="text-center">2.99</td>
+                    <td class="actions" data-th="">
+                        <button class="btn btn-info btn-sm"><i class="fa fa-refresh"></i></button>
+                        <button class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i></button>								
+                    </td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr class="visible-xs">
+                    <td class="text-center"><strong>Total 2.99</strong></td>
+                </tr>
+                <tr>
+                    <td><a href="#" onclick="goBack()" class="btn btn-warning"><i class="fa fa-angle-left"></i> Voltar para tela inicial</a> </td>
+                    <td colspan="2" class="hidden-xs"></td>
+                    <td class="hidden-xs text-center"><strong>Total R 2.99</strong></td>
+                    <td><a href="#" class="btn btn-success btn-block">Finalizar Compra <i class="fa fa-angle-right"></i></a></td>
+                </tr>
+            </tfoot>
+        </table>
+        </div>
+        </div>
+
+        <footer class="row" style="box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24); border-radius: 10px;">
+            <h4> Dominando 2020. All rights reserved. </h4>
+        </footer>
+    </div>
+</body>
+
+<script>
+    function goBack() {
+      window.history.back();
+    }
+    </script>
+
+</html>
