@@ -84,7 +84,7 @@
                     <td class="text-center"><strong>Total 2.99</strong></td>
                 </tr>
                 <tr>
-                    <td><a href="./index" class="btn btn-warning"><i class="fa fa-angle-left"></i> Comprar mais Peças</a> <a href="./index" class="btn btn-warning"><i class="fa fa-angle-left"></i> Voltar para tela inicial</a> </td>
+                    <td><a href="#" onclick="goBack()" class="btn btn-warning"><i class="fa fa-angle-left"></i> Voltar para tela inicial</a> </td>
                     <td colspan="2" class="hidden-xs"></td>
                     <td class="hidden-xs text-center"><strong>Total R 2.99</strong></td>
                     <td><a href="#" class="btn btn-success btn-block">Finalizar Compra <i class="fa fa-angle-right"></i></a></td>
@@ -100,6 +100,10 @@
     </div>
 </body>
 
-
+<script>
+    function goBack() {
+      window.history.back();
+    }
+    </script>
 
 </html>
