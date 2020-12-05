@@ -212,6 +212,9 @@ var textlose;
 var textplrwon;
 var bar;
 Jogo.prototype.FinalizarJogo = function (data) {
+    
+    console.log('Finalizando jogo');
+    console.log(data);
 
     if (this.jogador.id == data.getplayerwinID) {
 

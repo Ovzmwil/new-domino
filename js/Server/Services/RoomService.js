@@ -32,7 +32,7 @@ class RoomService {
                 game.addPlayer(new Player(user));
                 db.games.push(game);
 
-                resolve(game.getPublicInterface(user.id));
+                resolve(game.getPublicInterface(user._id));
             }catch(err){
                 reject(err.message);
             }
@@ -57,7 +57,7 @@ class RoomService {
         return new Promise((resolve, reject) => {
             try{
                 let game = RoomService.findGame(gameId, db);
-                let player = game.findPlayerById(user.id);
+                let player = game.findPlayerById(user._id);
                 if(!player){
                     player = new Player(user);
                     game.addPlayer(player);
@@ -68,7 +68,7 @@ class RoomService {
 
                 let boneyardData = game.getBoneyard().getPublicInterface();
                 let playerData = player.getPublicInterface();
-                let gameData = game.getPublicInterface(user.id);
+                let gameData = game.getPublicInterface(user._id);
 
                 GameConnectionPool.notifyBoneyardChanged(gameId, { boneyard : boneyardData });
                 GameConnectionPool.notifyPlayerEntered(gameId, player.getId(), { id: player.getId(), name : player.getName(), dominoes: player.getDominoes().length});
@@ -105,7 +105,7 @@ class RoomService {
                 let game = RoomService.findGame(gameId, db);
                 let domino = game.boneyard.take(1)[0];
 
-                let player = game.findPlayerById(user.id);
+                let player = game.findPlayerById(user._id);
                 player.addDomino(domino);
 
                 let boneyardData = game.getBoneyard().getPublicInterface();
@@ -152,7 +152,7 @@ class RoomService {
 				
                 if(player.dominoes.length==0){                    
                     game.state="FINISHED";
-                    playerwinID = player.id;
+                    playerwinID = player._id;
                     playerwinNome=player.name;
                 }
                 if(game.boneyard.dominoes.length==0){

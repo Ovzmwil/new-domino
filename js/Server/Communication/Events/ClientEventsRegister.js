@@ -22,7 +22,7 @@ class ClientEventsRegister{
             try {
                 let user = socket.request.session.user;
                 let player = { name : user.name };
-                notifyPlayerLeaveCallback(user.id, {player : player});
+                notifyPlayerLeaveCallback(user._id, {player : player});
             } catch (err) {
                 console.log(`Unable to notify disconnection to other players.`);
             }
@@ -37,7 +37,8 @@ class ClientEventsRegister{
 
             RoomService.playerEntered(gameId, user, DB)
             .then((data) => {
-                console.log(`Player ${data.player.id} has entered in game ${gameId}.`);
+                console.log(data);
+                console.log(`Player ${data.player.name} has entered in game ${gameId}.`);
                 socket.emit(EventosHelper.instance.eventosServer.entradaRegistrada, { success : true, data : data});
             })
             .catch((err) => {
@@ -49,7 +50,7 @@ class ClientEventsRegister{
 
     static registerMove(gameId, socket, io){
         socket.on(EventosHelper.instance.eventosClient.jogadaRealizada, function(req) {
-            let userId = socket.request.session.user.id;
+            let userId = socket.request.session.user._id;
             RoomService.play(req, userId, DB)
             .then((data) => {
                 console.log(`The domino ${data.domino.value1} | ${data.domino.value2} has been placed on board.`);
@@ -79,10 +80,10 @@ class ClientEventsRegister{
 
     static registerPass(gameId, socket, io){
         socket.on(EventosHelper.instance.eventosClient.passadaAVez, function(req) {
-            let userId = socket.request.session.user.id;
+            let userId = socket.request.session.user._id;
             RoomService.pass(req, userId, DB)
             .then((data) => {
-                console.log(`The player ${data.player.id} has passed his turn.`);
+                console.log(`The player ${data.player.name} has passed his turn.`);
                 io.emit(EventosHelper.instance.eventosServer.jogadaPassadaComSucesso, { success : true, data : data});
             })
             .catch((err) => {

@@ -1,5 +1,4 @@
-const User = require('../Models/User');
-const Usuario = require('../Models/Usuario');
+     const Usuario = require('../Models/Usuario');
 const bcrypt = require('bcryptjs');
 
 class LoginService {
@@ -11,21 +10,22 @@ class LoginService {
             try{
                 if(!data)
                     reject("Invalid data!");
-
                 //TODO: Load from DB. We can use Knex.
                 let user = db.users.find(u => u.username == data.username);
 
 
                 const usuario = await Usuario.findOne({name}).select('+password')
        
-                if(!usuario)
+                if(!usuario){
+                    console.log('Usuário não existe!!!');
                     return reject({success: false, message:'Usuario não existe'})
-                    
-                if(!await bcrypt.compare(password, usuario.password))
+                }
+                if(!await bcrypt.compare(password, usuario.password)){
+                    console.log('Senha incorreta')
                     return reject({success: false, message:'Senha incorreta'})
-
+                }
                 usuario.password = undefined;
-
+                
                 return resolve(usuario);
 
                 if(user == null){

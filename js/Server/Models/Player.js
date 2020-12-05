@@ -1,6 +1,6 @@
 class Player{
     constructor(user){
-        this.id = user.id;
+        this.id = user._id;
         this.name = user.name;
         this.dominoes = [];
     }
