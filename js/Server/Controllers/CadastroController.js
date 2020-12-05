@@ -3,6 +3,8 @@ const CadastroService = require('../Services/CadastroService');
 
 class CadastroController {
     static async post(req, res) {
+        console.log('Controller')
+        console.log(req.body)
         CadastroService.post(req.body)
         .then((user) => {
             if(user.success){
@@ -13,12 +15,14 @@ class CadastroController {
             }
         })
         .catch((err)=>{
+            console.log(err)
             res.status(500).send({ message: 'Erro ao fazer registro!!!', error : err});
 
         })
     }
 
     static async getDataUser(req,res){
+        console.log('Controller')
         console.log(req.session.user)
         CadastroService.getDataUser(req.session.user)
         .then((user) => {
@@ -29,6 +33,7 @@ class CadastroController {
             }
         })
         .catch((err)=>{
+            console.log(err)
             res.status(500).send({ message: 'Erro ao consultar dados registro!!!', error : err});
 
         })

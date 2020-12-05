@@ -30,13 +30,15 @@ $(function(){
     //  });
 
     btnCadastrar.click(function(){
+        
         console.log('Botao pressionado')
         var data = {
             "name" : txtUsernameCad.val(),
             "password" : txtPasswordCad.val(),
             "email": txtEmailCad.val()
         };
-        
+        console.log('Chamada')
+        console.log(data);
         $.ajax({
             url: '/api/cadastro',
             type: 'POST',
