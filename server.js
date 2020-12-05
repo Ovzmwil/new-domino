@@ -25,8 +25,8 @@ var sessionMiddleware = session({
 /* Middleware for restricted routes */
 const restricted = function(req, res, next) {
     var isLoggedIn = req.session.user instanceof Object;
-    var isLoginCall = req.path === "/login" || req.path === "/api/login";
-    var isCadastro = req.path === "/cadastro" || req.path === "/meucadastro" ;
+    var isLoginCall = req.path === "/login" || req.path === "/api/login"; 
+    var isCadastro = req.path === "/cadastro" || req.path === "/meucadastro"| req.path === "/checkout"  ;
     var isLoginPagePath = 
         req.path.startsWith("/css") ||
         req.path.startsWith("/js/plugins/") || req.path.startsWith("/assets/") ||
