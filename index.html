@@ -19,6 +19,10 @@
     <script type="text/javascript" src="js/Client/create_room.js"></script>
     <script type="text/javascript" src="js/Client/menu.js"></script>
     <script type="text/javascript" src="js/Client/index.js"></script>
+    <script type="text/javascript" src="js/Client/rank.js"></script>
+    <script>$(document).ready(function() {
+        CarregarTodos();
+    });</script>
 
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -36,6 +40,7 @@
         try{     
             myMusic = new sound("./assets/gametheme.mp3");     
             ligarSom();
+            desligarSom();
         }
         catch {
             desligarSom();
@@ -176,35 +181,9 @@
                                         <tr class="filters">
                                             <th><input type="text" class="form-control text-center" placeholder="Colocação" disabled></th>
                                             <th><input type="text" class="form-control text-center" placeholder="Nome" disabled></th>
-                                            <th><input type="text" class="form-control text-center" placeholder="Pontuação" disabled></th>
-                                            <th><input type="text" class="form-control text-center" placeholder="Nível" disabled></th>
-                                        </tr>
+                                            <th><input type="text" class="form-control text-center" placeholder="Pontuação" disabled></th>                                        </tr>
                                     </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>1º</td>
-                                            <td >Maria Joao do Nascimento</td>
-                                            <td>1000</td>
-                                            <td>5</td>
-                                        </tr>
-                                        <tr>
-                                            <td>2º</td>
-                                            <td>Ricardo Silva</td>
-                                            <td>900</td>
-                                            <td>5</td>
-                                        </tr>
-                                        <tr>
-                                            <td>3º</td>
-                                            <td>Joao Nascimento</td>
-                                            <td>600</td>
-                                            <td>3</td>
-                                        </tr>
-                                        <tr>
-                                            <td>4º</td>
-                                            <td>Bianca Reis</td>
-                                            <td>100</td>
-                                            <td>1</td>
-                                        </tr>
+                                    <tbody id="tbody">
                                     </tbody>
                                 </table>
                             </div>
@@ -256,7 +235,7 @@
                             <div class="col-md-3"></div>
                              <div class="col-md-6">
                                 <img src="../assets/skin/esferas/pedras/11.png" class="imgskin">
-                                <button type="button" class="form-control btn btn-success margin-bottom-5 margin-left-5  botaoComprar" data-dimiss="modal" onclick="EscolherSkin('esferas')" value="esferas">Esferas</button>                        
+                                <button type="button" class="form-control btn btn-success margin-bottom-5 margin-left-5  botaoComprar" data-dimiss="modal" onclick="EscolherSkin('esferas')" value="esferas" disabled>Esferas</button>                        
                             </div>
                             <!--div para botao de compra da peça-->
                             <div class="col-md-3" style="text-align: left; margin-left: -100px;">

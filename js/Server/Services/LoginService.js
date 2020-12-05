@@ -1,4 +1,4 @@
-     const Usuario = require('../Models/Usuario');
+const Usuario = require('../Models/Usuario');
 const bcrypt = require('bcryptjs');
 
 class LoginService {
@@ -18,27 +18,35 @@ class LoginService {
        
                 if(!usuario){
                     console.log('Usuário não existe!!!');
-                    return reject({success: false, message:'Usuario não existe'})
+                    return reject({user: usuario, success: false, message:'Usuario não existe.'})
                 }
                 if(!await bcrypt.compare(password, usuario.password)){
                     console.log('Senha incorreta')
-                    return reject({success: false, message:'Senha incorreta'})
+                    return reject({user: usuario, success: false, message:'Senha incorreta.'})
                 }
                 usuario.password = undefined;
                 
-                return resolve(usuario);
-
-                if(user == null){
-                    let nextId = Math.max.apply(Math, db.users.map(u => u.getId())) + 1;
-                    user = new User(nextId, data.username, "123456");
-                    db.users.push(user);
-                }
-
-                return resolve(user);
+                return resolve({user: usuario, success: true, message:'Login Efetuado com sucesso.'});
             }catch(err){
                 reject(err.message);
             }
         });
+    }
+
+    static alteraDados(data){
+        return new Promise(async (resolve, reject) => {
+            
+            const {id,name,password,email} = data;
+            
+            try{
+                if(!data)
+                    reject("Invalid data!");
+                const user = Usuario.findById()
+            }catch(err){
+                reject(err.message);
+            }
+        });
+
     }
 }
 

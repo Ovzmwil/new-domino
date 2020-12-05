@@ -4,6 +4,17 @@
     <meta charset="UTF-8">
     <link type="text/css" rel="stylesheet" href="css/meucadastro.css">
     <title>Minha Conta - Dominando</title>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="js/Client/Plugins/jquery.min.js"></script>
+    <script type="text/javascript" src="./js/Client/meu_cadastro.js"></script>
+    <script>
+    
+    $(document).ready(function() {
+        carregaDados();
+    }
+    );
+    
+    </script>
 </head>
 <body>
     
@@ -12,11 +23,11 @@
         <div class="form" style="border-radius: 10px;">
         <h1> Dados da conta </h1>
             <form class="login-form">
-                <input type="text" placeholder="Nome de Usuário" id="txtNomeCad"/>
-                <input type="email" placeholder="Endereço de Email" id="txtEmailCad"/>
-                <input type="password" placeholder="Senha" id="txtSenhaCad" />
-                <input type="password" placeholder="Digite a Senha Novamente" id="txtConfSenhaCad"/>                
-                <input type="button" id="btnCadastrar" value="Atualizar Dados"> 
+                <input type="text" placeholder="Nome de Usuário" id="txtNomeMeuCad" value={{txtNomeMeuCad}} disabled/>
+                <input type="email" placeholder="Endereço de Email" id="txtEmailMeuCad"/>
+                <input type="password" placeholder="Senha" id="txtSenhaMeuCad" />
+                <input type="password" placeholder="Digite a Senha Novamente" id="txtConfSenhaMeuCad"/>                
+                <input type="button" id="btnAtualizarDados" value="Atualizar Dados"> 
                 <input type="button" id="btnCancelar" style="margin-top:3px;" value="Cancelar">             
             </form>
         </div>        

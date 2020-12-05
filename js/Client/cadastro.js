@@ -26,8 +26,8 @@ $(function(){
     });
 
     // btnCancelar.click(function(){
-    //     window.location.href = "/index";
-    // });
+    //      window.location.href = "/index";
+    //  });
 
     btnCadastrar.click(function(){
         console.log('Botao pressionado')

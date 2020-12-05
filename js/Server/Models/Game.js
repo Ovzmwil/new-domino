@@ -68,14 +68,14 @@ class Game{
 
     start(){
         if(!this.isFull())
-            throw new Error(`${this.playersAmount} players are required to start the game.`);
+            throw new Error(`${this.playersAmount} jogadores são necessários para começar o jogo.`);
         
         this.state = GameState.STARTED;
     }
 
     addPlayer(player){
         if(this.isFull())
-            throw new Error(`The game has reached the maximum players amount(${this.playersAmount}).`);
+            throw new Error(`A sala atingiu a quantidade máxima de jogadores: (${this.playersAmount}).`);
 
         if(this.players.length === 0)
             this.playerIdInTurn = player.getId();

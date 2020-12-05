@@ -5,6 +5,8 @@
 // Require SpritePassar
 // Require MaoPrincipal
 
+
+
 //Classe
 var Jogo = function (gameId) {
     this.jogador = null;
@@ -218,6 +220,8 @@ Jogo.prototype.FinalizarJogo = function (data) {
 
     if (this.jogador.id == data.getplayerwinID) {
 
+        addPontosToWinner(data.getplayerwinID);
+        
         textwin.x = 200;
         textwin.y = 120;
         textwin.body.velocity.setTo(400, -350);
@@ -265,6 +269,27 @@ Jogo.prototype.FinalizarJogo = function (data) {
 
     }
 };
+
+function addPontosToWinner(id) {
+        var data = {"id":id};
+        
+        $.ajax({
+            url: '/api/rank/addpontos',
+            type: 'POST',
+            data: JSON.stringify(data),
+            contentType: 'application/json; charset=utf-8',
+            dataType: 'json',
+            async: true,
+            success: function(response) {
+                console.log('Pontos Atualizados')
+
+            },
+            error : function(response){
+                console.log(response)
+                alert(response.responseJSON.error.message);
+            }
+        });
+}
 
 function getout() {
     //TO DO: o jogador ao sair deve ter sua referencia ao jogo destruida pra não voltar e último a sair deve destruir a sala ou talvez reiniciar pra poder começar um novo jogo

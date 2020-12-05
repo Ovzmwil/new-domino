@@ -40,13 +40,14 @@ $(function(){
             dataType: 'json',
             async: true,
             success: function(response) {
+                console.log(response)
                 if(typeof(Storage) !== "undefined")
                     localStorage.username = response.user.name;
-
                 window.location.href = "/";
             },
-            error : function(){
-                alert("Não foi possível realizar login. Tente novamente mais tarde.");
+            error : function(response){
+                console.log(response)
+                alert(response.responseJSON.error.message);
             }
         });
     });

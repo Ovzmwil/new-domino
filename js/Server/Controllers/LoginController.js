@@ -5,11 +5,13 @@ class LoginController {
     static post(req, res) {
         LoginService.post(req.body, DB)
         .then((user) => {
-            if(user){
-                req.session.user = user;
-                res.status(200).send({ user: user });
+            if(user.success){
+                req.session.user = user.user;
+                console.log('loggin controller status 200')
+                res.status(200).send({ user: user.user });
             }else{
-                res.status(404).send({ user: "User and password doesn't match any account!" });
+                console.log('loggin controller status 404')
+                res.status(404).send({ user: user.message });
             }
         })
         .catch((err) => {

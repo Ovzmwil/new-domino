@@ -152,7 +152,7 @@ class RoomService {
 				
                 if(player.dominoes.length==0){                    
                     game.state="FINISHED";
-                    playerwinID = player._id;
+                    playerwinID = player.id;
                     playerwinNome=player.name;
                 }
                 if(game.boneyard.dominoes.length==0){
@@ -239,7 +239,7 @@ class RoomService {
                 let playerData = player.getPublicInterface();
 
                 if(!game.isTurn(player.getId()))
-                    reject(`It's not your turn!`);
+                    reject(`Não é a sua vez.`);
 
                 game.passTurnToNextPlayer();
 
