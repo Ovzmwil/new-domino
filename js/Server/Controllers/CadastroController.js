@@ -18,8 +18,8 @@ class CadastroController {
                 user.password = undefined;
         
                 return res.send({
-                    user,
-                    token: geraToken({id: user.id})
+                    user
+                    // token: geraToken({id: user.id})
                 });
             } catch (err) {
                 console.error(err.message);

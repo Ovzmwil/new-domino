@@ -28,7 +28,7 @@ $(function(){
 
     btnLogin.click(function(){
         var data = {
-            "username" : txtUsername.val(),
+            "name" : txtUsername.val(),
             "password" : txtPassword.val()
         };
         
@@ -38,10 +38,10 @@ $(function(){
             data: JSON.stringify(data),
             contentType: 'application/json; charset=utf-8',
             dataType: 'json',
-            async: false,
+            async: true,
             success: function(response) {
                 if(typeof(Storage) !== "undefined")
-                    localStorage.username = response.user.username;
+                    localStorage.username = response.user.name;
 
                 window.location.href = "/";
             },

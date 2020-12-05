@@ -21,6 +21,12 @@ const UserSchema = new mongoose.Schema({
         select: true,
     },
 
+    pontos: {
+        type: Number,
+        required: false,
+        default: 0
+    },
+
     createdAt: {
         type: Date,
         default: Date.now()
