@@ -17,7 +17,10 @@ router.post('/logout', LogoutController.post);
 
 router.post('/cadastro', CadastroController.post);
 
-router.get('/cadastro/meucadastro', CadastroController.getDataUser);
+router.get('/cadastro/meucadastro', async function(req,res) {
+    console.log(req.body)
+    CadastroController.getDataUser(req,res)
+});
 
 /* POST api/rank */
 router.post('/rank/addpontos', RankController.addPontosWinner);

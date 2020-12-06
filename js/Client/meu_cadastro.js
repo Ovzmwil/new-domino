@@ -1,5 +1,5 @@
 function carregaDados(){
-    console.log('CAdr')
+    console.log('Dados Cadastro')
     // var txtNomeMeuCad = .val();
     // var txtEmailMeuCad = .val();
     // var txtSenhaMeuCad = .val();
@@ -13,6 +13,7 @@ function carregaDados(){
             async: true,
             success: function(response) {
                 console.log('Sucesso API')
+                console.log(response)
                 // data_user = response['user'];
                 // console.log(data_user);
                 // // $("#txtNomeMeuCad").val(data_user.name);
@@ -21,8 +22,12 @@ function carregaDados(){
                 // // $('#txtConfSenhaMeuCad').val(data_user.password);
             },
             error : function(response){
+                console.log(response['message'])
                 console.log(response)
                 alert("Não foi possível atualizar cadastro. Tente novamente mais tarde.");
             }
         });
+    
+    console.log('After jQuery')
+
     };
