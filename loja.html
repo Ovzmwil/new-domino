@@ -14,10 +14,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
     
     <script type="text/javascript" src="js/Client/Plugins/jquery.min.js"></script>
-    <script type="text/javascript" src="js/Client/Plugins/bootstrap.min.js"></script>
-    <script type="text/javascript" src="js/Client/load_rooms.js"></script>
-    <script type="text/javascript" src="js/Client/create_room.js"></script>
-    <script type="text/javascript" src="js/Client/menu.js"></script>
+    <script type="text/javascript" src="js/Client/Plugins/bootstrap.min.js"></script> 
     <script type="text/javascript" src="js/Client/index.js"></script>
 
     <!--[if lt IE 9]>
@@ -40,7 +37,8 @@
                 <span class="welcome-msg">Bem vindo,&nbsp;</span><span class="username-msg"></span>
                 <br/>
                                             
-                <a class="logout" href="./loja">Loja</a> <!--&nbsp; &nbsp; &nbsp; <a class="logout" href="./meucadastro">Meu Cadastro</a>--> &nbsp; &nbsp; &nbsp; <a href="#" class="logout">Sair</a>                
+
+                <a  href="./loja">Loja</a><!-- &nbsp; &nbsp; &nbsp; <a  href="./meucadastro">Meu Cadastro</a>--> &nbsp; &nbsp; &nbsp; <a href="#" class="logout">Sair</a>                
                 <br/>    
                 
                 <button type="button" class="btn btn-warning">
@@ -138,10 +136,10 @@
                     <td class="text-center"><strong>Total 0</strong></td>
                 </tr>
                 <tr>
-                    <td><a  href="#" onclick="goBack()" class="btn btn-warning"><i class="fa fa-angle-left"></i> Voltar para tela inicial</a> </td>
+                    <td><a href="#" onclick="goBack()" class="btn btn-warning"><i class="fa fa-angle-left"></i> Voltar para tela inicial</a> </td>
                     <td colspan="2" class="hidden-xs"></td>
                     <td class="hidden-xs text-center"><strong>Total R$ <span id="totalEscolhido">0</span></strong></td>
-                    <td><a  href="#" onclick="javascript:ComprarMoedas()" class="btn btn-success btn-block">Finalizar Compra <i class="fa fa-angle-right"></i></a></td>
+                    <td><a href="#" onclick="javascript:ComprarMoedas()" class="btn btn-success btn-block">Finalizar Compra <i class="fa fa-angle-right"></i></a></td>
                 </tr>
             </tfoot>
         </table>
@@ -156,7 +154,8 @@
 
 <script>
     function goBack() {
-       window.history.back();
+      //window.history.back();
+      window.location.href = "/";
     }
     </script>
 
