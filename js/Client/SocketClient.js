@@ -1,7 +1,7 @@
 var SocketClient = function(jogo){
-    //let address = "http://localhost:8081";
+    let address = "http://localhost:8081";
 
-    let address = 'https://new-domino.herokuapp.com';
+    //let address = 'https://new-domino.herokuapp.com';
 
     this.socket = io.connect(address, {query : "gameId=" + jogo.gameId, 'sync disconnect on unload' : true });
     

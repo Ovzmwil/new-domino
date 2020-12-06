@@ -16,6 +16,7 @@ router.get("/index", (req, res) => res.sendFile(baseDir.concat("/index.html")));
 router.get("/inicio", (req, res) => res.sendFile(baseDir.concat("/index.html")));
 router.get("/meucadastro", (req, res) => res.sendFile(baseDir.concat("/meucadastro.html")));
 router.get("/checkout", (req, res) => res.sendFile(baseDir.concat("/checkout.html")));
+router.get("/loja", (req,res) => res.sendFile(baseDir.concat("/loja.html")));
 router.get("/game/:id", (req, res) => res.sendFile(baseDir.concat("/game.html")));
 router.get("/cadastro", (req, res) => res.sendFile(baseDir.concat("/cadastro.html")));
 
