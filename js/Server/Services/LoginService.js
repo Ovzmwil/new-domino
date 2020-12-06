@@ -32,22 +32,6 @@ class LoginService {
             }
         });
     }
-
-    static alteraDados(data){
-        return new Promise(async (resolve, reject) => {
-            
-            const {id,name,password,email} = data;
-            
-            try{
-                if(!data)
-                    reject("Invalid data!");
-                const user = Usuario.findById()
-            }catch(err){
-                reject(err.message);
-            }
-        });
-
-    }
 }
 
 module.exports = LoginService;
