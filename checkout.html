@@ -14,10 +14,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
     
     <script type="text/javascript" src="js/Client/Plugins/jquery.min.js"></script>
-    <script type="text/javascript" src="js/Client/Plugins/bootstrap.min.js"></script>
-    <script type="text/javascript" src="js/Client/load_rooms.js"></script>
-    <script type="text/javascript" src="js/Client/create_room.js"></script>
-    <script type="text/javascript" src="js/Client/menu.js"></script>
+    <script type="text/javascript" src="js/Client/Plugins/bootstrap.min.js"></script> 
     <script type="text/javascript" src="js/Client/index.js"></script>
 
     <!--[if lt IE 9]>
@@ -40,7 +37,7 @@
                 <span class="welcome-msg">Bem vindo,&nbsp;</span><span class="username-msg"></span>
                 <br/>
                                             
-                <a class="logout" href="./checkout">Loja</a> &nbsp; &nbsp; &nbsp; <a class="logout" href="./meucadastro">Meu Cadastro</a> &nbsp; &nbsp; &nbsp; <a href="#" class="logout">Sair</a>                
+                <a  href="./checkout">Loja</a> &nbsp; &nbsp; &nbsp; <a  href="./meucadastro">Meu Cadastro</a> &nbsp; &nbsp; &nbsp; <a href="#" class="logout">Sair</a>                
                 <br/>    
                 
                 <button type="button" class="btn btn-warning">
@@ -156,7 +153,8 @@
 
 <script>
     function goBack() {
-      window.history.back();
+      //window.history.back();
+      window.location.href = "/";
     }
     </script>
 
